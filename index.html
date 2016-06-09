@@ -46,13 +46,42 @@
         /*地图上标注特定位置文字标签的样式，还需div和js*/
 		
 		/*start地图全屏*/
-		html, body, .map {
+		html, body,.container-fluid,.row-fluid,.span12, .map {
 			margin: 0;
 			padding: 0;
 			width: 100%;
 			height: 100%
 		}
+        #head{
+            position: absolute;
+            top: 0px;
+            width:100%;
+            text-align: center;
+        }
 		/*end地图全屏*/
+
+        /*start标题*/
+        #title-container{
+            position:absolute;
+            top:0;
+            width: 100%;
+            background-color:#333;
+            opacity:0.7; /*设置透明度*/
+        }
+        #title{
+            background: rgba(0, 0, 0, 1);
+            color: #fff;        /*设置颜色*/
+            font-size: 16px;
+            padding-top:20px;padding-bottom: 20px;      /*设置上下边距*/
+            text-align:center;
+        }
+        /*end标题*/
+
+        /*start放大缩小*/
+        .ol-zoom{top:6.5em;left:1em}
+        /*end放大缩小*/
+
+
     </style>
 
 </head>
@@ -62,8 +91,12 @@
     <div class="row-fluid">
         <div class="span12">
 			
-			<div id="map" class="map"/>				
-			<div id="queryll"/>								
+			<div id="map" class="map"></div>
+            <div id="title-container">
+                <div id="title">云南天地图</div>
+            </div>
+			<div id="queryll"></div>
+
 			
             <!--<a class="overlay" id="vienna" target="_blank" href="http://en.wikipedia.org/wiki/Vienna">Vienna</a>-->
             <div style="display: none;">
@@ -98,8 +131,11 @@
     ];
                 <!-------------------------------------地图加载----------------------------------------->
 
-                <!-------------------------------------设置地图显示中心----------------------------------------->
+                <!-------------------------------------设置地图显示中心，widget----------------------------------------->
     var map = new ol.Map({
+        controls:[
+            new ol.control.Zoom()//只保留界面的放大缩小按钮
+        ],
         layers: layers,
         target: 'map',
         view: new ol.View({
