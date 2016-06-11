@@ -118,17 +118,22 @@
                 <!-------------------------------------地图加载---------------------------------------->
     var url = 'http://localhost:6080/arcgis/rest/services/world1984/MapServer';//定义底图地址变量
     var url1='http://ynmap.org.cn/OneMapServer/rest/services/YNImageMap/MapServer';
-    var layers = [
-        new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})//默认底图，可删除
-        }),
-        new ol.layer.Tile({//引入ArcGIS底图，地理坐标必须与底图相同
+
+//天地图影像
+    var tdt_image = new ol.layer.Tile({
+        title: "天地图卫星影像",
+        source: new ol.source.XYZ({
+            url: 'http://t{1-7}.tianditu.com/DataServer?T=img_w&x={x}&y={y}&l={z}'
+
+        })
+    });
+//云南天地图影像
+    var yntdt_image = new ol.layer.Tile({//引入ArcGIS底图，地理坐标必须与底图相同
 //            extent: [102.54, 24.65, 102.82, 24.97],//图层显示范围，该图层只显示该指定范围，采用地理坐标显示时参数值依次为[最小经度，最小维度，最大经度，最大纬度]，采用投影坐标时改为对应的x值和y值
             source: new ol.source.TileArcGISRest({
                 url: url1
             })
-        })
-    ];
+        }) ;
                 <!-------------------------------------地图加载----------------------------------------->
 
                 <!-------------------------------------设置地图显示中心，widget----------------------------------------->
@@ -136,7 +141,9 @@
         controls:[
             new ol.control.Zoom()//只保留界面的放大缩小按钮
         ],
-        layers: layers,
+        layers:[
+            tdt_image
+        ],
         target: 'map',
         view: new ol.View({
             projection: 'EPSG:4326',//投影设置，投影可为所列图层中的任意一个
