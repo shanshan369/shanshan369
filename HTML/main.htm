@@ -1,0 +1,757 @@
+
+
+<HTML><HEAD><TITLE>HTML 语言</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<base target="_self">
+</HEAD>
+<BODY bgColor=#d4d4d4>
+<P><!--################## Document Structures ########################--></P>
+<P><A 
+name=structure></A></P>
+<H2><i><u>HTML 
+文件结构(Document Structures)</u></i></H2>
+<H3><font size="5" color="#800000">&lt;html&gt;...&lt;/html&gt;<BR>&lt;head&gt;...&lt;/head&gt;<BR>&lt;body&gt;...&lt;/body&gt;</font></H3>
+<DL><PRE><font size="5" color="#0000FF">&lt;HTML&gt;
+&lt;HEAD&gt;
+     &lt;title&gt;,&lt;meta&gt;<span lang="en-us">......</span>
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+    HTML 文件的正文写在这里...... 
+&lt;/BODY&gt;
+&lt;/HTML&gt;</font>
+</PRE></DL>
+<P><!--################## LANGUAGE INFO ########################--><A 
+name=meta></A></P>
+<H2><i><u>Meta 标记</u></i> <font color="#009933">例：</font><a target="_blank" href="例子/01Meta.htm">meta实例</a></H2>
+<H3><font size="5" color="#800000">语法：&lt;meta http-equiv="属性值1&quot; content=&quot;属性值2"&gt;</font></H3>
+<DL compact>
+  <table border="1" width="800" id="table12">
+	<tr>
+		<td width="184"><b><font size="5">作用</font></b></td>
+		<td width="184"><b><font size="5">属性值1</font></b></td>
+		<td width="436"><b><font size="5">属性值2</font></b></td>
+	</tr>
+	<tr>
+		<td width="184"><b><font size="5">标识语言字符集</font></b></td>
+		<td width="184"><b><font size="5">Content-Type</font></b></td>
+		<td width="436"><b><font size="5">text/html; charset=“#”（#可以为gb2312、big5 
+		、us-ascii、&nbsp; x-euc-jp、 iso-2022-kr……）</font></b></td>
+	</tr>
+	<tr>
+		<td width="184"><b><font size="5">自动跳转页面</font></b></td>
+		<td width="184"><b><font size="5">refresh</font></b></td>
+		<td width="436"><b><font size="5">刷新间隔的秒数；url=跳转新页面地址</font></b></td>
+	</tr>
+	<tr>
+		<td width="184"><b><font size="5">标识作者信息</font></b></td>
+		<td width="184"><b><font size="5">author</font></b></td>
+		<td width="436"><b><font size="5">作者姓名</font></b></td>
+	</tr>
+	<tr>
+		<td width="184"><b><font size="5">标识版权信息</font></b></td>
+		<td width="184"><b><font size="5">copyright</font></b></td>
+		<td width="436"><b><font size="5">版权归属</font></b></td>
+	</tr>
+	</table>
+</DL>
+<P>可在 HTML 文件中设置 MIME 字符集信息。<BR>您在浏览主页时，最好自己在浏览器的选项菜单内选择相应的语言(language 
+encoding)。<BR>但是如果 HTML 文件里写明了设置，浏览器就会自动设置语言选项。<BR>尤其是主页里用到了<A 
+href="http://www.gzsums.edu.cn/webclass/html/entities.html">字符实体(entities)</A>，则该主页就应该写明字符集信息。<BR>否则，您在浏览该主页时，若未正确设置语言选项，显示将可能混乱。</P><PRE></PRE>
+<P><!--################## Background Color ########################--><A 
+name=bgcolor></A></P>
+<H2><u><i>背景色彩</i></u> <font color="#009933">例：</font><a target="_blank" href="例子/02background.htm">body属性实例</a></H2>
+<H3><font size="5" color="#800000">背景色彩： &lt;body bgcolor=# text=# link=# alink=# vlink=#&gt;</font></H3>
+<DL>
+  <DD><font size="5">bgcolor --- 背景色彩 </font> 
+  <DD><font size="5">text --- 非可链接文字的色彩 
+  </font> 
+  <DD><font size="5">link --- 可链接文字的色彩 
+  </font> 
+  <DD><font size="5">alink --- 正被点击的可链接文字的色彩 </font> 
+  <DD><font size="5">vlink --- 已经点击(访问)过的可链接文字的色彩 </font> 
+  <H3><font size="5">#为#rrggbb 比如：<font color="#FF0000">红色</font>为#FF0000，<font color="#00FF00">绿色</font>为#00FF00，<font color="#0000FF">蓝色</font>为#0000FF<br>
+	</font><b><font size="5">或者是下列预定义色彩：<BR><FONT color=#000000>Black</FONT>, 
+	<FONT 
+  color=#808000>Olive</FONT>, <FONT color=#008080>Teal</FONT>, 
+	<FONT 
+  color=#ff0000>Red</FONT>, <FONT color=#0000ff>Blue</FONT>, 
+	<FONT 
+  color=#800000>Maroon</FONT>, <FONT color=#000080>Navy</FONT>, 
+	<FONT 
+  color=#808080>Gray</FONT>, <FONT color=#00ff00>Lime</FONT>, <BR>
+	<FONT 
+  color=#ff00ff>Fuchsia</FONT>, <FONT color=#ffffff>White</FONT>, 
+	<FONT 
+  color=#008000>Green</FONT>, <FONT color=#800080>Purple</FONT>, 
+	<FONT 
+  color=#c0c0c0>Silver</FONT>, <FONT color=#ffff00>Yellow</FONT>, 
+	<FONT 
+  color=#00ffff>Aqua</FONT> </font></b></H3>
+	<DD><b><font size="4">色彩是用 16 进制的 红－绿－蓝(red-green-blue, RGB) 值来表示。<BR>16 进制的数码有: 
+  0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f. 
+  </font></b> 
+  <P></P></DD></DL>
+<H3><font color="#800000" size="5">背景图像： &lt;body background="图片的路径"&gt;</font></H3><PRE></PRE>
+
+<P><!--################## HEADER ########################--><A 
+name=header></A></P>
+<H2><u><i><font face="黑体">标题字体(Header)</font></i></u></H2>
+<H3><font color="#800000" size="5" face="黑体">语法：&lt;h#&gt; ... &lt;/h#&gt; #=1, 2, 3, 4, 5, 6</font></H3>
+<div align="center">
+	<table border="1" width="100%" id="table1">
+		<tr>
+			<td width="278" align="left"><b><font size="5">代码</font></b></td>
+			<td align="left"><b><font size="5">结果</font></b></td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h1&gt;今天天气真好！&lt;/h1&gt;</FONT></TT></td>
+			<td>
+			<h1>今天天气真好！</h1>
+			</td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h2&gt;今天天气真好！&lt;/h2&gt;</FONT></TT></td>
+			<td>
+			<h2>今天天气真好！</h2>
+			</td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h3&gt;今天天气真好！&lt;/h3&gt;</FONT></TT></td>
+			<td>
+			<h3>今天天气真好！</h3>
+			</td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h4&gt;今天天气真好！&lt;/h4&gt;</FONT></TT></td>
+			<td>
+			<h4>今天天气真好！</h4>
+			</td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h5&gt;今天天气真好！&lt;/h5&gt;</FONT></TT></td>
+			<td>
+			<h5>今天天气真好！</h5>
+			</td>
+		</tr>
+		<tr>
+			<td width="278"><TT><FONT size=5 color="#0000FF">&lt;h6&gt;今天天气真好！&lt;/h6&gt;</FONT></TT></td>
+			<td>
+			<h6>今天天气真好！</h6>
+			</td>
+		</tr>
+	</table>
+	<p align="left"><font size="5" face="方正姚体">
+	每级标题的字符大小没有一个固定值，它是由浏览器所决定的，可以通过设置设置各级标题的具体属性。</font></div>
+<PRE></PRE>
+<P><!--################## FONT SIZE ########################--><A 
+name=font_size></A></P>
+<H2><u><i>字体大小</i></u></H2>
+<H3><font color="#800000" size="5">语法 &lt;font size=#&gt; ... &lt;/font&gt; 
+</font></H3>
+<H3><font color="#800000" size="5">#=1, 2, 3, 4, 5, 6, 7 or +#, 
+-#<BR></font><TT><span style="font-weight: 400"><font size="5" color="#0000FF">&lt;font size=&quot;7&quot;&gt;今天天气真好！&lt;/font&gt;</font></span> </TT><FONT 
+size=+4>今天天气真好！</FONT></H3>
+<P><TT><font color="#0000FF" size="5">&lt;font size=&quot;6&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=+3>今天天气真好！</FONT></P>
+<P><TT><font size="5" color="#0000FF">&lt;font size=&quot;5&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=+2>今天天气真好！</FONT></P>
+<P><TT><font size="5" color="#0000FF">&lt;font size=&quot;4&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=+1>今天天气真好！</FONT></P>
+<P><TT><font color="#0000FF" size="5">&lt;font size=&quot;3&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=+0>今天天气真好！</FONT></P>
+<P><TT><font color="#0000FF" size="5">&lt;font size=&quot;2&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=-1>今天天气真好！</FONT></P>
+<P><TT><font color="#0000FF" size="5">&lt;font size=&quot;1&quot;&gt;今天天气真好！&lt;/font&gt;</font> </TT><FONT 
+size=-2>今天天气真好！</FONT></P>
+<P></P><PRE></PRE>
+<P><!--################## Physical Style ########################--><A 
+name=physical></A></P>
+<H2><u><i>物理字体(Physical Style)</i></u></H2>
+<P><font size="5" color="#800000"><b>加粗：</b>&nbsp; </font>
+<font color="#0000FF" size="5">&lt;b&gt;今天天气真好！&lt;/b&gt; </font> <B>&nbsp;今天天气真好！</B></P>
+<P><b><font size="5" color="#800000">倾斜：</font></b><font size="5" color="#0000FF">&nbsp; &lt;i&gt;今天天气真好！&lt;/i&gt;</font> <I>&nbsp; 今天天气真好！</I></P>
+<P><b><font size="5" color="#800000">下划线：</font></b><font size="5" color="#0000FF">&lt;u&gt;今天天气真好！&lt;/u<span lang="en-us">&gt;</span>&nbsp;
+</font>&nbsp;<U>今天天气真好！</U></P>
+<P><b><font size="5" color="#800000">手写体：</font></b><font color="#0000FF" size="5">&lt;tt&gt;今天天气真好！&lt;/tt&gt;</font> <TT>今天天气真好！</TT></P>
+<P><font size="5" color="#800000"><b>删除线：</b></font><font color="#0000FF" size="5">&lt;s&gt;今天天气真好！&lt;/s &gt;</font>
+<STRIKE>今天天气真好！</STRIKE></P>
+<P></P><PRE></PRE>
+<P><!--################## Logical Style ########################--><A 
+name=logical></A></P>
+<H2><u><i>逻辑字体(Logical Style)</i></u> </H2>
+<p style="line-height: 150%"><font size="5">　　<span lang="zh-cn">逻辑字体</span>不能像物理字体那样明确知道字体的显示方式，这些标签并不指明字体如何显示，而是让Web浏览器自行决定显示方式，不同的浏览器解释的效果可能就不一样，</font></p>
+<p style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp; 
+一般情况下浏览器是按下述的方式进行解释显示的。</font></p>
+<P><font size="5" color="#800000"><span lang="zh-cn">一般强调：</span></font><font color="#0000FF" size="5">&lt;em&gt;今天天气真好！&lt;/em&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font> <I>今天天气真好！</I></P>
+<P><font size="5" color="#800000">特别强调：</font><font size="5" color="#0000FF">&lt;strong&gt;今天天气真好！&lt;/strong&gt;</font> <B>今天天气真好！</B></P>
+<P><font size="5"><font color="#800000">标题文字：</font><font color="#0000FF">&lt;cite&gt;今天天气真好！&lt;/cite&gt;</font>
+</font> <I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今天天气真好！</I></P>
+<P><font size="5" color="#800000">缩小：</font><font size="5" color="#0000FF">&nbsp;&nbsp;&nbsp; &lt;small&gt;今天天气真好！&lt;/small&gt;</font> <FONT size=-1>&nbsp;&nbsp;&nbsp;&nbsp; 今天天气真好！</FONT></P>
+<P><font size="5" color="#800000">放大：</font><font size="5" color="#0000FF">&nbsp;&nbsp;&nbsp; &lt;big&gt;今天天气真好！&lt;/big&gt;</font> <FONT size=+1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今天天气真好！</FONT></P>
+<P><font color="#0000FF">&lt;code&gt;今天天气真好！&lt;/code&gt;</font> <TT>今天天气真好！</TT><font style="LINE-HEIGHT: 18px" color="#333333">&nbsp;&nbsp;&nbsp;
+</font><font style="LINE-HEIGHT: 18px" color="#800000">以等宽字体显示命令或计算机程序代码。</font></P>
+<P><font color="#0000FF">&lt;samp&gt;今天天气真好！&lt;/samp&gt;</font> <TT>今天天气真好！&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<font style="LINE-HEIGHT: 18px" color="#800000">用于字母序列，用等宽字体显示。</font></P>
+<P><font color="#0000FF">&lt;kbd&gt;今天天气真好！&lt;/kbd&gt;</font> <TT>今天天气真好！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<font color="#800000">&nbsp;</font></TT><font style="LINE-HEIGHT: 18px" color="#800000">用粗体等宽字体显示文字。</font></P>
+<P><font color="#0000FF">&lt;var&gt;今天天气真好！&lt;/var&gt;</font> <I>今天天气真好！&nbsp;&nbsp;&nbsp; </I>
+<font style="LINE-HEIGHT: 18px" color="#800000">用较小的固定宽度字体显示字体，也可以表示一个程序变量。</font></P>
+<P><font color="#0000FF">&lt;dfn&gt;今天天气真好！&lt;/dfn&gt;</font> <DFN>今天天气真好！&nbsp;&nbsp;&nbsp; </DFN>
+<font style="LINE-HEIGHT: 18px" color="#800000">用于名词解释，通常用斜体来显示被解释的术语或名词缩写。</font></P>
+<P></P>
+<P></P>
+<P></P><PRE></PRE>
+<P><!--################## Size & Style Tags Combination ########################--><A 
+name=combi></A></P>
+<H2><u><i>指定“字体大小”的标记和“指定字体”的标记的组合使用</i></u></H2><PRE><font size="5" color="#0000FF">&lt;i&gt;
+&lt;font size=5&gt;
+    &lt;b&gt;今天&lt;/b&gt;
+    天气
+    &lt;font size=6&gt; 真好！&lt;/font&gt;
+&lt;/font&gt;
+&lt;/i&gt;</font></PRE>
+<P><I><FONT size=+2><B>今天</B> 天气 </FONT><FONT size=+3>真好！</FONT></I> </P><PRE></PRE>
+<P><!--################## Font Color ########################--><A 
+name=fontcolor></A></P>
+<H2><u><i>字体颜色</i></u> </H2>
+<P><!------16-------></P>
+<H3><font size="5">语法：指定颜色 &lt;font color=#&gt; ... &lt;/font&gt;</font></H3>
+<DL>
+  <DD><b><font size="5">#=rrggbb 16 进制数码，或者是下列预定义色彩：<BR><FONT color=#000000>Black</FONT>, <FONT 
+  color=#808000>Olive</FONT>, <FONT color=#008080>Teal</FONT>, <FONT 
+  color=#ff0000>Red</FONT>, <FONT color=#0000ff>Blue</FONT>, <FONT 
+  color=#800000>Maroon</FONT>, <FONT color=#000080>Navy</FONT>, <FONT 
+  color=#808080>Gray</FONT>, <FONT color=#00ff00>Lime</FONT>, <BR><FONT 
+  color=#ff00ff>Fuchsia</FONT>, <FONT color=#ffffff>White</FONT>, <FONT 
+  color=#008000>Green</FONT>, <FONT color=#800080>Purple</FONT>, <FONT 
+  color=#c0c0c0>Silver</FONT>, <FONT color=#ffff00>Yellow</FONT>, <FONT 
+  color=#00ffff>Aqua</FONT> </font></b> </DD></DL>
+<P><TT><font size="5" color="#0000FF">&lt;font color=#FFFFFF&gt;White&lt;/font&gt; 
+&amp; <BR>&lt;font 
+color=white&gt;White&lt;/font&gt; </font> </TT></P>
+<P><font size="5" color="#ffffff">White</font><font size="5"> &amp; <FONT color=#ffffff>White</FONT> 
+</font>
+</P>
+<P><b><u><i><font size="5"><a name="specialfonts"></a></font></i></u></b></P>
+<P><b><u><i><font size="5">特殊字符</font></i></u></b></P>
+<table border="1" width="800" id="table13">
+	<tr>
+		<td width="102" height="43"><b><font size="5">HTML代码</font></b></td>
+		<td width="107" height="43"><b><font size="5">表示字符</font></b></td>
+		<td height="43" colspan="2">
+		<p align="center"><b><font size="5">例子</font></b></td>
+	</tr>
+	<tr>
+		<td width="102"><font size="5"><b>&amp;gt;</b></font></td>
+		<td width="107"><font size="5"><b>&gt;</b></font></td>
+		<td width="283"><font size="5"><b>200&amp;gt;189 </b></font></td>
+		<td width="280"><font size="5"><b>200&gt;189</b></font></td>
+	</tr>
+	<tr>
+		<td width="102" height="28"><font size="5"><b>&amp;lt;</b></font></td>
+		<td width="107" height="28"><font size="5"><b>&lt;</b></font></td>
+		<td height="28" width="283"><font size="5"><b>20&amp;lt;189 </b></font></td>
+		<td height="28" width="280"><font size="5"><b>20&lt;189</b></font></td>
+	</tr>
+	<tr>
+		<td width="102"><font size="5"><b>&amp;quot;</b></font></td>
+		<td width="107">&quot;</td>
+		<td width="283"><font size="5"><b>&amp;quot;风驰电掣&amp;quot </b></font></td>
+		<td width="280"><font size="5"><b>&quot;风驰电掣&quot;</b></font></td>
+	</tr>
+	<tr>
+		<td width="102"><font size="5"><b>&amp;amp;</b></font></td>
+		<td width="107">&amp;</td>
+		<td width="283"><font size="5"><b>x&amp;gt;y&amp;amp;x=120&nbsp;&nbsp; </b>
+		</font></td>
+		<td width="280"><font size="5"><b>x&gt;y &amp; x=120</b></font></td>
+	</tr>
+	<tr>
+		<td width="102"><font size="5"><b>&amp;copy;</b></font></td>
+		<td width="107"><font size="5"><b>&copy;</b></font></td>
+		<td width="283"><b><font size="5">&amp;copy;CopyRight&nbsp; </font></b></td>
+		<td width="280"><b><font size="6">&copy;</font><font size="5">CopyRight</font></b></td>
+	</tr>
+	<tr>
+		<td width="102"><font size="5"><b>&amp;reg;</b></font></td>
+		<td width="107"><font size="5"><b>&reg;</b></font></td>
+		<td width="283"><b><font size="5">&amp;reg;APTECH&nbsp; </font></b></td>
+		<td width="280"><b><font size="6">&reg;</font><font size="5">APTECH</font></b></td>
+	</tr>
+</table>
+<P><!--################## Line Control ########################--><A 
+name=line></A></P>
+<H2><u><i>行的控制</i></u><font color="#800000"> </font> </H2>
+<H3><font color="#800000"><font size="5">段 &lt;p&gt;…</font><span lang="en-us"><font size="5">&lt;/p&gt; 
+（Enter键）</font></span></font></H3>
+<DL>
+  <DD><font color="#0000FF"><TT><font size="5">你好吗？&lt;p&gt;很好。<span lang="en-us">&lt;/p&gt;</span></font></TT><font size="5">
+	</font></font> </DD></DL>
+<P>你好吗？
+<P>
+<P>很好。</P>
+<H3><font size="5" color="#800000">换行 &lt;br&gt;&nbsp;&nbsp; （Shift+Enter键）</font></H3>
+<DL>
+  <DD><font color="#0000FF"><TT><font size="5">你好吗？&lt;br&gt;很好。</font></TT><font size="5">
+	</font></font> </DD></DL>
+<P>你好吗？<BR>很好。</P>
+<P><font size="5"><b><font color="#008000">例：</font><a target="_blank" href="例子/test02.htm">段落符和换行符的不同实例</a></b></font></P><PRE></PRE>
+<NOBR>
+<P><!--################## ALIGNMENT ########################--><A 
+name=Alignment></A></P>
+<H2><u><i>文字的对齐(Alignment)</i></u> </H2>
+<P><!------hn centering-------><font color="#800000" size="5">语法：</font></P>
+<H3><font color="#800000" size="5">&lt;hn align=#&gt;...&lt;/hn&gt; <BR>&lt;p align=#&gt;...&lt;/p&gt; 
+</font></H3>
+<H3><font color="#800000" size="5">#=left, 
+center, right</font></H3>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;h3 align=center&gt;Hello&lt;/h3&gt;<BR>&lt;h3 
+  align=right&gt;Hello&lt;/h3&gt; </TT></font></DD></DL>
+<H3 align=center>Hello</H3>
+<H3 align=right>Hello</H3>
+<P><!------centering-------></P>
+<H3><font color="#800000" size="5">&lt;center&gt;...&lt;/center&gt;</font> </H3>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;center&gt;Hello&lt;/center&gt;</font> </TT></DD></DL>
+<CENTER>
+Hello </CENTER></nobr>
+<P><!--################## LINK ########################-->
+<A name=link></A>
+</P>
+<H2><u><i>链接(Link)</i></u></H2>
+<H3><font size="5" color="#800000">语法： &lt;a target=&quot;#&quot; href="URL"&gt; ... &lt;/a&gt;</font></H3>
+<p><font size="5">#为<span lang="en-us"> _blank:</span>将链接文件载入新的浏览器窗口</font></p>
+<p><font size="5">&nbsp;&nbsp;&nbsp; <span lang="en-us">_</span>parent：将被连接文件载入父框架集或包含该链接的框架窗口中</font></p>
+<p><font size="5">&nbsp;&nbsp;&nbsp; _self：将被链接文件载入与该链接相同的框架或窗口中</font></p>
+<p><font size="5">&nbsp;&nbsp;&nbsp; _top：将被链接文件载入到整个浏览器窗口并删除所有框架</font></p>
+<DL>
+  <DD><TT><font color="#0000FF" size="5">这是一个<BR>&lt;a</font></TT><font size="5" color="#0000FF"> 
+	target=&quot;_blank&quot;</font><TT><font color="#0000FF" size="5"> href="<span lang="en-us">http://www.cyu.edu.cn</span>"&gt;链接的例子&lt;/a&gt;。 
+   
+	<BR>点一下带下划线的文字!</font></TT><font color="#0000FF" size="5"><BR></font></DD></DL>
+<P><font size="5">这是一个<a target="_blank" href="http://www.cyu.edu.cn/">链接的例子</a>。 
+点一下带下划线的文字!</font></P>
+<P></P><PRE></PRE>
+<P><!------link name-------><u><i><b><font size="5">绝对路径：</font></b></i></u></P>
+<P><font size="5" color="#0000FF">&lt;a target=&quot;_blank&quot; href=&quot;file:///J:/！网页制作/！课件/HTML课件/例子/test01.htm&quot;&gt;这个是一个绝对路径&lt;/a&gt;</font></P>
+<P><font size="5">&nbsp;</font><a target="_blank" href="file:///J:/！网页制作/Myweb/index.html"><font size="5">这个是一个绝对路径</font></a></P>
+<P><b><u><i><font size="5">相对路径：</font></i></u></b></P>
+<P><font color="#0000FF" size="5">&lt;a target=&quot;_blank&quot; href=&quot;例子/test01.htm&quot;&gt;这是一个相对路径&lt;/a&gt;</font></P>
+<H3><span style="font-weight: 400"><a target="_blank" href="例子/test01.htm">
+<font size="5">这是一个相对路径</font></a></span></H3>
+<H3><font size="5"><u><i>跳转到页面的另外一个地方</i></u></font><font size="5" color="#800000"> </font>
+<font size="5" color="#008000">例：</font><font size="5" color="#800000"><a target="_blank" href="例子/03link.htm">跳转页面实例</a></font></H3>
+<H3><font size="5" color="#800000">语法：<BR>&lt;a href="#name"&gt; ... &lt;/a&gt;<BR>&lt;a 
+name="name"&gt; ... &lt;/a&gt;</font> </H3>
+<DL>
+  <DD><font color="#0000FF" size="5"><TT>&lt;a href=&quot;#jump-test&quot;&gt;跳转到下一个&quot;链接点&quot;&lt;/a&gt;<BR>&lt;a 
+  name="jump-test"&gt;下一个链接点&lt;/a&gt; </TT></font></DD></DL>
+<P><A 
+href="http://www.gzsums.edu.cn/webclass/html/page.html#jump-test">跳转到下一个"链接点"</A></P>
+<P><A name=jump-test></A>下一个链接点</P><PRE></PRE>
+<P><!------link name 2-------><A name=jump2></A></P>
+<H3><u><i><font size="5">跳转到另一个页面的某个地方</font></i></u></H3>
+<H3><font size="5" color="#800000">语法：<BR>&lt;a href="URL#name"&gt; ... &lt;/a&gt;<BR>&lt;a 
+name="name"&gt; ... &lt;/a&gt; </font> </H3>
+<DL>
+  <DD><TT><font color="#0000FF" size="5">跳转到另一个页面的&lt;a 
+  href="samp/link.html#jump-test"&gt;某个地方&lt;/a&gt;。</font><BR></TT></DD></DL>
+<P>跳转到另一个页面的<A 
+href="http://www.gzsums.edu.cn/webclass/html/samp/link.html#jump-test">某个地方</A>。</P><PRE></PRE>
+<PRE></PRE>
+<P><!--################## HR ########################--><A name=hr></A></P>
+<H2><u><i>标尺线</i></u></H2>
+<H3>&lt;hr&gt;</H3>
+<P><TT><font size="5" color="#0000FF">&lt;hr&gt; </font> </TT></P>
+<P>
+<HR>
+
+<P></P><PRE></PRE>
+<H3>&lt;hr size=#&gt;</H3>
+<P><TT><font size="5" color="#0000FF">&lt;hr size=10&gt; </font> </TT></P>
+<P>
+<HR SIZE=10>
+
+<P></P><PRE></PRE>
+<H3>&lt;hr width=#&gt;</H3>
+<P><TT><font size="5" color="#0000FF">&lt;hr width=50&gt;<BR>&lt;hr width=50%&gt;</font> </TT></P>
+<P>
+<HR width=50>
+
+<HR width="50%">
+
+<P></P><PRE></PRE>
+<H3>&lt;hr align=#&gt; #=left, right</H3>
+<P><TT><font size="5" color="#0000FF">&lt;hr width=50% align=left&gt;<BR>&lt;hr width=50% align=right&gt; 
+</font> 
+</TT></P>
+<P>
+<HR align=left width="50%">
+
+<HR align=right width="50%">
+
+<P></P><PRE></PRE>
+<H3>&lt;hr noshade&gt;</H3>
+<P><TT><font size="5" color="#0000FF">&lt;hr noshade&gt; </font> </TT></P>
+<P>
+<HR noShade>
+
+<P></P><PRE></PRE>
+<H3>&lt;hr color=#&gt; </H3>
+<DL>
+  <DD><b><font size="5">#为#rrggbb 16 进制 RGB 数码，或者是下列预定义色彩：<BR><FONT color=#000000>Black</FONT>, 
+  <FONT color=#808000>Olive</FONT>, <FONT color=#008080>Teal</FONT>, <FONT 
+  color=#ff0000>Red</FONT>, <FONT color=#0000ff>Blue</FONT>, <FONT 
+  color=#800000>Maroon</FONT>, <FONT color=#000080>Navy</FONT>, <FONT 
+  color=#808080>Gray</FONT>, <FONT color=#00ff00>Lime</FONT>, <BR><FONT 
+  color=#ff00ff>Fuchsia</FONT>, <FONT color=#ffffff>White</FONT>, <FONT 
+  color=#008000>Green</FONT>, <FONT color=#800080>Purple</FONT>, <FONT 
+  color=#c0c0c0>Silver</FONT>, <FONT color=#ffff00>Yellow</FONT>, <FONT 
+  color=#00ffff>Aqua</FONT> </font></b> </DD></DL>
+<P><TT><font size="5" color="#0000FF">&lt;hr color="red"&gt; </font> </TT></P>
+<P>
+<HR color=red>
+
+<P><!--################## Basic ########################--><A 
+name=image></A></P>
+<P><u><i><b>
+<font size="5">
+图片的操作</font></b></i></u></P>
+<H2>
+链入图像<span lang="en-us"> </span><font color="#008000">例：</font><a target="_blank" href="例子/04images.htm">图片操作实例</a></H2>
+<H2>
+<font color="#800000">语法</font></H2>
+<H3><font color="#800000">&lt;img src=#&gt; </font></H3>
+<H3><font color="#800000">#=图像的 URL</font></H3>
+<P><!------img description-------></P>
+<H3><font color="#800000">&lt;img alt=#&gt; </font></H3>
+<H3><font color="#800000"> <BR><FONT size=+0>#=在浏览器尚未完全读入图像时，在图像位置显示的文字。</FONT></font></H3>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;img src="images<span lang="en-us">/</span>f.gif" alt="MY FACE :-)"&gt; </TT>
+	</font></DD></DL>
+<P><img border="0" src="images/em29.gif" width="66" height="66"> 
+</P><PRE></PRE>
+<P><!--################## Image aligned with Text ########################--><A 
+name=text></A></P>
+<H2>
+<u><i>图像和文字的对齐</i></u></H2>
+<H3>&lt;img align=#&gt; #=top, middle, bottom</H3>
+<DL>
+  <DD><TT><font color="#0000FF" size="5">&lt;img src=URL align=top&gt; My face!</font> </TT></DD></DL>
+<P><IMG height=66 alt=(^_^) src="images/em29.gif" width=66 align=top> 
+My Face! </P>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;img src=URL align=middle&gt; My face! </TT>
+	</font></DD></DL>
+<P>
+<IMG height=66 alt=(^_^) src="images/em29.gif" width=66 
+align=center> My Face! </P>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;img src=URL align=bottom&gt; My face!
+	</font> </TT></DD></DL>
+<P>
+<IMG height=66 alt=(^_^) src="images/em29.gif" width=66 
+align=bottom> My Face! </P>
+<UL>
+  <LI>只有一行文字才可以放在图像的两边。<LI>Only one text line can be flown into the both side of Image. </LI></UL><PRE></PRE>
+<P><!--################## Floating Image ########################--><A 
+name=float></A></P>
+<H2>
+<u><i>图像在页面中的对齐/布局(Floating Image) </i></u> </H2>
+<P><!------img align=left-------></P>
+<H3><font color="#800000" size="5"><B>&lt;img align=left&gt;</B></font></H3>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;img src=<span lang="en-us">&quot;</span>images<span lang="en-us">/f.gif&quot;</span> align=left&gt;</TT></font></DD>
+	<DD><font color="#0000FF" size="6"><TT>My Face!&lt;br&gt;<BR>It is 
+  always&lt;br&gt;<BR>smiling.&lt;br&gt;<BR>Hahaha....&lt;br&gt;</TT></font><BR></DD></DL>
+<P>
+<IMG height=66 alt=(^_^) src="images/em29.gif" width=66 
+align=left>My Face!<BR>It is always<BR>smiling.<BR>Hahaha....<BR><BR 
+clear=all></P><PRE></PRE>
+<P><!------img align=right-------></P>
+<H3><font color="#800000" size="5"><B>&lt;img align=right&gt;</B></font></H3>
+<P>
+<IMG height=66 alt=(^_^) src="images/em29.gif" width=66 
+align=right>My Face!<BR>It is always<BR>smiling.<BR>Hahaha....<BR 
+clear=all></P><PRE></PRE>
+<P><!--################## Border ########################--><A 
+name=border></A></P>
+<H2>
+<u><i>边框</i></u></H2>
+<P><!------border-------></P>
+<H3><font color="#800000" size="5"><B>&lt;img border=#&gt; </B></font></H3>
+<H3><font color="#800000" size="5"><B>#=</B>数值</font></H3>
+<p><font color="#0000FF" size="6"><TT><BR>&lt;img src=<span lang="en-us">&quot;</span>images<span lang="en-us">/fh.gif&quot;</span> border=15&gt;<BR>　</TT></font></p>
+<P><a href="images/fh.gif">
+<IMG height=66 alt=(^_^) 
+src="images/em29.gif" width=66 border=15></a> </P>
+<P align="left">&nbsp;<!--################## Basic ########################--><A 
+name=marquee></A></P>
+<P align="left"><u><i><b><font size="5">会动的文字（marquee）</font></b></i></u></P>
+<H2><font color="#800000">基本语法</font></H2>
+<H3><font size="5" color="#800000">&lt;marquee&gt; ... &lt;/marquee&gt;</font></H3>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;marquee&gt;啦啦啦，我会移动耶！&lt;/marquee&gt; </TT>
+	</font></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE>啦啦啦，我会移动耶！</MARQUEE></font></b></P><PRE></PRE>
+<P><!--################## Scroll ########################--><A 
+name=scrolla></A></P>
+<H2><u><i>文字移动属性的设置</i></u> </H2>
+<P><!------Direction-------><A name=dir></A></P>
+<H3><font size="5" color="#800000">方向 direction=#<br>
+&nbsp;&nbsp;&nbsp;&nbsp; #=left, right</font></H3>
+<DL>
+  <DD><font color="#0000FF" size="6"><TT>&lt;marquee direction=left&gt;啦啦啦，我从右向左移！&lt;/marquee&gt; 
+  &lt;P&gt;<BR>&lt;marquee direction=right&gt;啦啦啦，我从左向右移！&lt;/marquee&gt; 
+  </TT></font></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE>啦啦啦，我从右向左移！</MARQUEE></font></b></P>
+<P>
+<b><font size="5">
+<MARQUEE direction=right>啦啦啦，我从左向右移！</MARQUEE></font></b></P><PRE></PRE>
+<P><!------BEHAVIOR-------><A name=style></A></P>
+<H3><font size="5" color="#800000">方式 behavior=#</font></H3>
+<H3><font size="5" color="#800000">&nbsp;&nbsp;&nbsp;&nbsp; #=scroll, slide, alternate（滚动条、幻灯片、交替）</font></H3>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;marquee behavior=scroll&gt;啦啦啦，我一圈一圈绕着走！&lt;/marquee&gt; 
+  &lt;P&gt;<BR>&lt;marquee behavior=slide&gt;啦啦啦，我只走一次就歇了！&lt;/marquee&gt; 
+  &lt;P&gt;<BR>&lt;marquee behavior=alternate&gt;啦啦啦，我来回走耶！&lt;/marquee&gt; 
+  </font> 
+  </TT></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE>啦啦啦，我一圈一圈绕着走！</MARQUEE></font></b></P>
+<P>
+<b><font size="5">
+<MARQUEE behavior=slide>啦啦啦，我只走一次就歇了！</MARQUEE></font></b></P>
+<P>
+<b><font size="5">
+<MARQUEE behavior=alternate>啦啦啦，我来回走耶！</MARQUEE></font></b></P><PRE></PRE>
+<P><!------LOOP-------><A name=loop></A></P>
+<H3><font size="5" color="#800000">循环 loop=# </font></H3>
+<H3><font size="5" color="#800000">&nbsp;&nbsp;&nbsp;&nbsp; #=次数；若未指定则循环不止(infinite)</font></H3>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;marquee loop=3 width=50% behavior=scroll&gt;啦啦啦，我只走 3 
+  趟哟！&lt;/marquee&gt; &lt;P&gt;<BR>&lt;marquee loop=3 width=50% 
+  behavior=slide&gt;啦啦啦，我只走 3 趟哟！&lt;/marquee&gt; &lt;P&gt;<BR>&lt;marquee 
+  loop=3 width=50% behavior=alternate&gt;啦啦啦，我只走 3 趟哟！&lt;/marquee&gt; 
+</font> 
+</TT></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE loop=3 width="50%">啦啦啦，我只走 3 趟哟！</MARQUEE></font></b></P>
+<P>
+<b><font size="5">
+<MARQUEE behavior=slide loop=3 width="50%">啦啦啦，我只走 3 趟哟！</MARQUEE></font></b></P>
+<P>
+<b><font size="5">
+<MARQUEE behavior=alternate loop=3 width="50%">啦啦啦，我只走 3 趟哟！</MARQUEE></font></b></P><PRE></PRE>
+<P><!------SCROLL AMOUNT-------><A name=scroll></A></P>
+<H3><font size="5" color="#800000">速度 scrollamount=#</font></H3>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;marquee scrollamount=20&gt;啦啦啦，我走得好快哟！&lt;/marquee&gt;
+	</font> 
+</TT></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE scrollAmount=20>啦啦啦，我走得好快哟！</MARQUEE></font></b></P><PRE></PRE>
+<P><!------SCROLL DELAY-------></P>
+<H3><font size="5" color="#800000">延时 scrolldelay=#</font></H3>
+<DL>
+  <DD><TT><font size="5" color="#0000FF">&lt;marquee scrolldelay=500 
+  scrollamount=100&gt;啦啦啦，我走一步，停一停！&lt;/marquee&gt; </font> </TT></DD></DL>
+<P>
+<b><font size="5">
+<MARQUEE scrollAmount=100 scrollDelay=500>啦啦啦，我走一步，停一停！</MARQUEE></font></b></P>
+<p><font size="5" color="#800000"><b>高度 height= 像数值</b></font></p>
+<p><font size="5" color="#800000"><b>宽度 weigh= 像数值</b></font></p>
+<p><b><font size="5"><font color="#008000">例：</font><a target="_blank" href="例子/05marquee_up.htm">滚动字幕实例</a>&nbsp;&nbsp;
+<a target="_blank" href="例子/06_2marquee_magic.htm">滚动字幕进阶实例</a>&nbsp;
+<a target="_blank" href="例子/06_3marquee_easy.htm">进阶实例简化版</a></font></b></p>
+<p><font size="5"><b><a target="_blank" href="例子/07_1layer_easy.htm">层简单实例</a>&nbsp;&nbsp;&nbsp;
+<a target="_blank" href="例子/07_2layer.htm">中秋实例</a></b></font></p>
+<P>&nbsp;<!--################## table ########################--><A 
+name=table></A></P>
+<H2><u><i>表格的基本语法</i></u> </H2>
+<H3><font size="5" color="#800000">定义表格: &lt;table&gt;...&lt;/table&gt;<BR>定义表行:&lt;tr&gt;...&lt;/tr&gt;<BR>
+定义表头:&lt;th&gt;...&lt;/th&gt; <BR>定义表元(表格的具体数据):&lt;td&gt;...&lt;/td&gt;</font></H3><font size="5">带边框的表格：</font> <PRE><font size="5" color="#0000FF">&lt;table border&gt;
+&lt;tr&gt;&lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;      
+&lt;/table&gt;</font>
+
+</PRE>
+<TABLE border=1 id="table2">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH></TR>
+  <TR>
+    <TD>A</TD>
+    <TD>B</TD>
+    <TD>C</TD></TR></TBODY></TABLE>
+<P><BR><font size="5">不带边框的表格：</font> <PRE><font size="5" color="#0000FF">&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;      
+&lt;/table&gt;</font>
+</PRE>
+<TABLE id="table3">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH width="45">Sweet</TH></TR>
+  <TR>
+    <TD>A</TD>
+    <TD>B</TD>
+    <TD width="45">C</TD></TR></TBODY></TABLE><PRE></PRE>
+<P><!--################## Table Span ########################--><A 
+name=span></A></P>
+<H2>* 
+跨多行、多列的表元(Table Span)</H2>
+<H3><font size="5" color="#800000">跨多列的表元: &lt;th colspan=#&gt;</font></H3><PRE><font size="5" color="#0000FF">&lt;table border&gt;
+&lt;tr&gt;&lt;th colspan=3&gt;Morning Menu&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</font>
+
+</PRE>
+<TABLE border=1 id="table4">
+  <TBODY>
+  <TR>
+    <TH colSpan=3>Morning Menu</TH></TR>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH></TR>
+  <TR>
+    <TD>A</TD>
+    <TD>B</TD>
+    <TD>C</TD></TR></TBODY></TABLE>
+<H3><font color="#800000" size="5">跨多行的表元 &lt;th rowspan=#&gt;</font></H3><PRE><font size="5" color="#0000FF">&lt;table border&gt;
+&lt;tr&gt;&lt;th rowspan=3&gt;Morning Menu&lt;/th&gt;&lt;th&gt;Food&lt;/th&gt; &lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Sweet&lt;/th&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</font>
+
+</PRE>
+<TABLE border=1 id="table5">
+  <TBODY>
+  <TR>
+    <TH rowSpan=3>Morning Menu</TH>
+    <TH>Food</TH>
+    <TD>A</TD></TR>
+  <TR>
+    <TH>Drink</TH>
+    <TD>B</TD></TR>
+  <TR>
+    <TH>Sweet</TH>
+    <TD>C</TD></TR></TBODY></TABLE><PRE></PRE>
+<P><!--################## Size ########################--><A name=size></A></P>
+<H2>表格尺寸设置</H2>
+<P><!------Border-------></P>
+<H3><font size="5" color="#800000">边框尺寸设置：&lt;table border=#&gt;</font></H3> <PRE><font size="5" color="#0000FF">&lt;table border=10&gt;
+&lt;tr&gt;&lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;      
+&lt;/table&gt;</font>
+
+</PRE>
+<TABLE border=10 id="table6">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH></TR>
+  <TR>
+    <TD>A</TD>
+    <TD>B</TD>
+    <TD>C</TD></TR></TBODY></TABLE>
+<H3><font size="5" color="#800000">表格尺寸设置：&lt;table border width=# height=#&gt;</font></H3> <PRE><font size="5" color="#0000FF">&lt;table border width=170 height=100&gt;
+&lt;tr&gt;&lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;      
+&lt;/table&gt;</font>
+
+</PRE>
+<TABLE height=100 width=170 border=1 id="table7">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH></TR>
+  <TR>
+    <TD>A</TD>
+    <TD>B</TD>
+    <TD>C</TD></TR></TBODY></TABLE>
+<PRE></PRE>
+<P><!--################## Text in Table ########################-->
+<A 
+name=text0></A></P>
+<H2>表格内文字的对齐/布局</H2>
+<p><b><font size="5" color="#800000">水平对齐语法：</font></b></p>
+<H3><font color="#800000" size="5">&lt;tr align=#&gt; </font> </H3>
+<H3><font color="#800000" size="5">&lt;th align=#&gt; </font></H3>
+<H3><font color="#800000" size="5">&lt;td align=#&gt; </font> </H3>
+<p><b><font color="#800000" size="5">&nbsp;#=left, center, right</font></b></p><PRE><font size="5" color="#0000FF">&lt;table border width=160&gt;
+&lt;tr&gt;
+ &lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;&lt;th&gt;Sweet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td align=left&gt;A&lt;/td&gt;
+   &lt;td align=center&gt;B&lt;/td&gt;
+   &lt;td align=right&gt;C&lt;/td&gt; 
+&lt;/tr&gt; 
+&lt;/table&gt;</font>
+</PRE>
+<TABLE width=160 border=1 id="table10">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH></TR>
+  <TR>
+    <TD align=left>A</TD>
+    <TD align=middle>B</TD>
+    <TD align=right>C</TD></TR></TBODY></TABLE>
+<P><!------VALIGN-------><b><font size="5" color="#800000">垂直对齐语法：</font></b></P>
+<H3><font size="5" color="#800000">&lt;tr valign=#&gt; </font> </H3>
+<H3><font size="5" color="#800000">&lt;th valign=#&gt; </font></H3>
+<H3><font size="5" color="#800000">&lt;td valign=#&gt; </font> </H3>
+<H3><font size="5" color="#800000">&nbsp;#=top, middle, bottom, baseline</font></H3><PRE><font size="5" color="#0000FF">&lt;table border height=100&gt;
+&lt;tr&gt;
+   &lt;th&gt;Food&lt;/th&gt;&lt;th&gt;Drink&lt;/th&gt;
+   &lt;th&gt;Sweet&lt;/th&gt;&lt;th&gt;Other&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td valign=top&gt;A&lt;/td&gt;
+   &lt;td valign=middle&gt;B&lt;/td&gt;
+   &lt;td valign=bottom&gt;C&lt;/td&gt;
+   &lt;td valign=baseline&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</font>
+</PRE>
+<TABLE height=100 border=1 id="table11">
+  <TBODY>
+  <TR>
+    <TH>Food</TH>
+    <TH>Drink</TH>
+    <TH>Sweet</TH>
+    <TH>Other</TH></TR>
+  <TR>
+    <TD vAlign=top>A</TD>
+    <TD vAlign=center>B</TD>
+    <TD vAlign=bottom>C</TD>
+    <TD vAlign=baseline>D</TD></TR></TBODY></TABLE>
+<p>　</p>
+<p><font size="5"><a target="_blank" href="例子/09fram.htm">框架实例1</a>&nbsp;
+<a target="_blank" href="例子/10star_frame.htm">框架实例2</a> <span lang="zh-cn">&nbsp;<a target="_blank" href="例子/11table.htm">表格布局1</a>&nbsp;<a target="_blank" href="http://www.felissimo.com.cn/">表格布局2</a></span></font></p>
+<p>　</p>
+<p><font size="5"><a target="_blank" href="例子/12form.htm">表单<span lang="zh-cn">实例</span></a><span lang="zh-cn"> </span>
+</font></p>
+<PRE></PRE>
+
+</BODY></HTML>
