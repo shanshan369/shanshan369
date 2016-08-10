@@ -1,16 +1,191 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head lang="en">
-    <meta charset="UTF-8">
+<html>
+<head>
     <title>Q行天下</title>
-    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.11.1/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.11.1/build/ol.js"></script>
+    <meta charset="utf-8"/>
+    <style>
+        /*地图上标注特定位置点的样式，还需div和js*/
+        #marker {           /*点1的样式，还需div和js*/
+            width: 20px;
+            height: 20px;
+            border: 1px solid #F00;
+            border-radius: 10px;
+            background-color: #F00;
+            opacity: 1;
+        }
+        #marker2 {          /*点2的样式，还需div和js*/
+            width: 20px;
+            height: 20px;
+            border: 1px solid #F00;
+            border-radius: 10px;
+            background-color: #F00;
+            opacity: 1;
+        }
+        /*地图上标注特定位置点的样式，还需div和js*/
+
+        /*地图上标注特定位置文字标签的样式，还需div和js*/
+        #vienna {
+            text-decoration:none;/*文字装饰，当前无装饰,当值为underline时会显示下划线*/
+            color: #FFF;
+            font-size: 11pt;
+            font-weight: bold;/*文字加粗*/
+            text-shadow: black 0.2em 0.1em 0.3em;/*文字阴影，四个参数分别表示阴影颜色、影偏右阴移量、下偏移量、透明度，该参数的好处在于当文字和背景难区分时可以通过阴影偏移增强轮廓*/
+        }
+        #Yunnan {
+            text-decoration:none;/*文字装饰，当前无装饰,当值为underline时会显示下划线*/
+            color: white;
+            font-size: 11pt;
+            font-weight: bold;/*文字加粗*/
+            text-shadow: black 0.2em 0.1em 0.3em;/*文字阴影，四个参数分别表示阴影颜色、影偏右阴移量、下偏移量、透明度，该参数的好处在于当文字和背景难区分时可以通过阴影偏移增强轮廓*/
+        }		
+        /*地图上标注特定位置文字标签的样式，还需div和js*/
+		
+		/*start地图全屏*/
+		html, body,.container-fluid,.row-fluid,.span12, .map {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%
+		}
+        #head{
+            position: absolute;
+            top: 0px;
+            width:100%;
+            text-align: center;
+        }
+		/*end地图全屏*/
+
+        /*start标题*/
+        #title-container{
+            position:absolute;
+            top:0;
+            width: 100%;
+            background-color:#333;
+            opacity:0.7; /*设置透明度*/
+        }
+        #title{
+            background: rgba(0, 0, 0, 1);
+            color: #fff;        /*设置颜色*/
+            font-size: 16px;
+            padding-top:20px;padding-bottom: 20px;      /*设置上下边距*/
+            text-align:center;
+        }
+        /*end标题*/
+
+        /*start放大缩小*/
+        .ol-zoom{top:6.5em;left:1em}
+        /*end放大缩小*/
+
+
+    </style>
+
 </head>
 <body>
-<div class="main">
-    <h1>目录</h1>
-    <a href="HTML/index.htm" target="_blank">HTML</a></br>
-    <a href="map1.html" target="_blank">mark and position</a></br>
-    <a href="lon.latindex4326.html" target="_blank">Location</a></br>
+<div class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="span12">
+			
+			<div id="map" class="map"></div>
+            <div id="title-container">
+                <div id="title">云南天地图</div>
+            </div>
+			<div id="queryll"></div>
+
+			
+            <!--<a class="overlay" id="vienna" target="_blank" href="http://en.wikipedia.org/wiki/Vienna">Vienna</a>-->
+            <div style="display: none;">
+                <!--地图上标注特定位置点的div，还需样式和js-->
+                <div id="marker" title="Here is marker1!"></div>//点1的div,还需样式和js，title为鼠标指在点上时的提示
+                <div id="marker2" title="Here is marker2!"></div>//点2的div还需样式和js，title为鼠标指在点上时的提示
+                <!--地图上标注特定位置点的div，还需样式和js-->
+
+                <!--地图上标注特定位置文字标注的div，还需样式和js,class不可少-->
+                <a class="overlay" id="vienna" target="_blank" href="http://en.wikipedia.org/wiki/Vienna">Vienna</a>
+                <a class="overlay" id="Yunnan" target="_blank" href="http://www.baidu.com">Yunnan</a>
+                <!--地图上标注特定位置文字标注的div，还需样式和js，class不可少-->
+            </div>
+        </div>
+    </div>
+
 </div>
+<script>
+                <!-------------------------------------地图加载---------------------------------------->
+    var url = 'http://localhost:6080/arcgis/rest/services/world1984/MapServer';//定义底图地址变量
+    var url1='http://ynmap.org.cn/OneMapServer/rest/services/YNImageMap/MapServer';
+
+//天地图影像
+    var tdt_image = new ol.layer.Tile({
+        title: "天地图卫星影像",
+        source: new ol.source.XYZ({
+            url: 'http://t{1-7}.tianditu.com/DataServer?T=img_w&x={x}&y={y}&l={z}'
+
+        })
+    });
+//云南天地图影像
+    var yntdt_image = new ol.layer.Tile({//引入ArcGIS底图，地理坐标必须与底图相同
+//            extent: [102.54, 24.65, 102.82, 24.97],//图层显示范围，该图层只显示该指定范围，采用地理坐标显示时参数值依次为[最小经度，最小维度，最大经度，最大纬度]，采用投影坐标时改为对应的x值和y值
+            source: new ol.source.TileArcGISRest({
+                url: url1
+            })
+        }) ;
+                <!-------------------------------------地图加载----------------------------------------->
+
+                <!-------------------------------------设置地图显示中心，widget----------------------------------------->
+    var map = new ol.Map({
+        controls:[
+            new ol.control.Zoom()//只保留界面的放大缩小按钮
+        ],
+        layers:[
+            tdt_image
+        ],
+        target: 'map',
+        view: new ol.View({
+            projection: 'EPSG:4326',//投影设置，投影可为所列图层中的任意一个
+            center: [102,25],//地图中心点，格式为[经度,纬度]
+            zoom: 7//缩放级别（云南天地图在该级别下才能看到）
+        })
+    });
+                <!-------------------------------------设置地图显示中心----------------------------------------->
+
+                <!---------------------------添加地图上的点marker-JS，另需div和样式-------------------------------->
+    //    var pos0 = ol.proj.fromLonLat([102,24]);//地图有投影时定义点的位置，在position处调用
+    var marker = new ol.Overlay({//点1
+        position: ([102,24]),//等经纬度投影的地图加点要在这个位置
+        positioning: 'center-center',
+        element: document.getElementById('marker'),//对应的div名
+        stopEvent: true
+    });
+    var marker2 = new ol.Overlay({//点2
+        position: ([103,25]),
+        positioning: 'center-center',
+        element: document.getElementById('marker2'),//对应的div名
+        stopEvent: false
+    });
+    map.addOverlay(marker);//div marker上画点1
+    map.addOverlay(marker2);//div marker2上画点2
+                <!---------------------------添加地图上的点marker-JS，另需div和样式-------------------------------->
+
+                <!---------------------------添加地图上文字标注label-JS，另需div和样式-------------------------------->
+    //    var pos0 = ol.proj.fromLonLat([102,24]);//地图有投影时定义点的位置，在position处调用
+    var vienna = new ol.Overlay({
+        position: [102,24],//等经纬度投影的地图加点要在这个位置
+        element: document.getElementById('vienna')//与div关联
+    });
+    map.addOverlay(vienna);
+
+    var Yunnan = new ol.Overlay({
+        position: [103,25],//等经纬度投影的地图加点要在这个位置
+        element: document.getElementById('Yunnan')//与名为Yunnan的div关联
+    });
+    map.addOverlay(Yunnan);
+                <!---------------------------添加地图上的文字标注label-JS，另需div和样式-------------------------------->
+
+</script>
 </body>
 </html>
