@@ -1,0 +1,84 @@
+让你的文字动起来——Marquee用法详解
+
+在论坛默认的编辑状态下，我们可以通过UBB语法的move和fly语句让对象动起来，但功能很简单，只是平行地移动。而我们使用HTML的Marquee语句则可以产生更多的移动效果：向左、向右、向上、向下。再嵌套使用marquee语句，效果就更加丰富了。
+
+marquee的基本语法：<marquee> ... </marquee>
+
+说明：与大多数HTML语法元素一样，它也是成双出现的，被修饰对象就放在起始符和终止符之间。请看如下例子：
+
+<marquee> 啦啦啦，真的会动耶！</marquee>
+
+
+
+瞧，简单吧？不过，以上例子只是使用了marquee的默认用法。我们加入相应的参数，它的移动方法就有所不同了。
+
+参数一：direction
+
+direction的英文意思就是方向。这个参数的取值有四个：left（左)、right(右)、up(上)、down(下)。
+
+例：<marquee direction=up>向上移动</marquee>
+
+
+
+参数二：behavior
+
+移动方式。值：scroll(循环移动)、slide(只移动一个回合)、alternate(来回移动)。
+
+例：<marquee direction=left behavior=alternate>哈哈，我来回走！</marquee>
+
+
+
+
+<marquee direction=left behavior=slide>累！我只走一次！</marquee>
+
+
+
+
+参数三：loop
+
+循环。若未指定则循环不止(infinite)，其值取数值。例：
+
+<marquee loop=3>我只走三次哦</marquee>
+
+
+
+
+参数四：scrollamount
+
+移动速度。值取正整数。数值越大，速度越快。例：
+
+<marquee scrollamount=25>看，我走多快！</marquee>
+
+
+
+
+参数五：scrolldelay
+
+延时。数值。例：
+
+<marquee scrolldelay=1000>我走一走，停一停</marquee>
+
+
+
+
+参数六：bgcolor
+
+底色。例：<marquee bgcolor=pink>看到了吧？有底色！</marquee>
+
+
+
+
+参数七：width和height
+
+就是移动的宽度与高度了。例：
+
+<marquee width=200 height=200 bgcolor=pink direction=down>这个面积不够我移动！</marquee>
+
+
+
+
+其他参数：
+
+空白(Margins)<hspace=数值 vspace=数值>
+对齐方式(Align) <align=top/ middle/bottom>
+
